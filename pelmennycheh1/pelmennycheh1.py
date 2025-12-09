@@ -27,32 +27,20 @@ def calculate_pelmeni_line(
 
     n_tm = math.ceil(P_tl_dough / r_tm)
 
-# --- III. Ïîäãîòîâêà ôàðøà ---
-    if a_f is not None:
-        a_f_frac = a_f / 100
-        P_tl_meat = P_tl_pelmeni * a_f_frac
-    else:
-        total_frac = (a_m + a_y + a_s + a_sp) / 100
-        P_tl_meat = P_tl_pelmeni * total_frac
-
-    n_k = math.ceil(P_tl_meat / r_k)
-
-    return n_pa, n_tm, n_k
 if __name__ == "__main__":
-    Qsut = float(input("Qñóò (ò/ñóò): "))
-    t = float(input("t (÷): "))
-    a_t = float(input("Àò (ìàññîâàÿ äîëÿ òåñòà, %): "))
-    r_pa = float(input("Pïà (ò/÷): "))
-    r_tm = float(input("Pòì (ò/÷): "))
-    r_k = float(input("Pê (ò/÷): "))
-    a_f = float(input("Aô (%): "))
+    Qsut = float(input("Qсут (т/сут): "))
+    t = float(input("t (ч): "))
+    a_t = float(input("Ат (массовая доля теста, %): "))
+    r_pa = float(input("Pпа (т/ч): "))
+    r_tm = float(input("Pтм (т/ч): "))
+    r_k = float(input("Pк (т/ч): "))
+    a_f = float(input("Aф (%): "))
 
     n_pa, n_tm, n_k = calculate_pelmeni_line(
         Qsut, t, a_t, r_pa, r_tm, r_k, a_f=a_f
     )
 
-    print("\nÐÅÇÓËÜÒÀÒÛ:")
-    print(f"Ïåëüìåííûå àâòîìàòû: {n_pa}")
-    print(f"Òåñòîìåñèëüíûå ìàøèíû: {n_tm}")
-    print(f"Êóòòåðû: {n_k}")
-
+    print("\nРЕЗУЛЬТАТЫ:")
+    print(f"Пельменные автоматы: {n_pa}")
+    print(f"Тестомесильные машины: {n_tm}")
+    print(f"Куттеры: {n_k}")
